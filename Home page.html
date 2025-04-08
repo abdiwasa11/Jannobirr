@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-SAHAL</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: black; /* Dark blue background */
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 400px;
+            padding: 30px;
+        }
+
+        .logo-container {
+            margin-bottom: 30px;
+        }
+
+        .logo-image {
+            width: 80px; /* Adjust size as needed */
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .logo-text-main {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 5px;
+            color: white; /* Light blue */
+        }
+
+        .logo-text-sub {
+            font-size: 0.9em;
+            color: white; /* Light blue */
+        }
+
+        .phone-number {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+            color: white; /* Light blue */
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            border: 1px solid #B1D0E0; /* Light blue border */
+            border-radius: 5px;
+            background-color: #294C60; /* Slightly darker blue for input background */
+            padding: 10px;
+        }
+
+        .input-group input {
+            flex-grow: 1;
+            border: none;
+            background: transparent;
+            color: white;
+            padding: 8px;
+            font-size: 1em;
+        }
+
+        .input-group input:focus {
+            outline: none;
+        }
+
+        .input-group label {
+            color: #B1D0E0; /* Light blue label */
+            margin-right: 10px;
+            font-size: 0.9em;
+        }
+
+        .input-group button {
+            background: transparent;
+            color: #B1D0E0; /* Light blue "Show" button */
+            border: none;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+
+        .sign-in-button {
+            background-color: #1A5F7A; /* Darker blue for button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px 20px;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            
+        }
+
+.sign-in-button a{
+  color: white; font-size: 25px;
+  text-decoration: none;
+}
+        .sign-in-button:hover {
+            background-color: #144A5E; /* Slightly darker on hover */
+        }
+
+        .language-switcher {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border-radius: 5px;
+            padding: 8px;
+            cursor: pointer;
+            font-size: 0.8em;
+        }
+
+        .language-switcher span {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            border: 1px solid white;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="20250406_195239.png" width="110px" height="110px" >
+            <div class="logo-text-main"></div>
+            <div class="logo-text-sub">Fast, Secure & Easy Money transfer</div>
+        </div>
+
+        <div class="phone-number">+251973842069</div>
+
+        <div class="input-group">
+            <label for="password">Password/PIN</label>
+            <input type="password" id="password" placeholder="Enter your password/PIN">
+            <button type="button" onclick="togglePasswordVisibility()">Show</button>
+        </div>
+
+        <button class="sign-in-button">
+          <a href="index.html">Sign in</a></button>
+    </div>
+
+    <div class="language-switcher">
+        <span>A</span><span>E</span>
+        
+    </div>
+
+    <script>
+        function togglePasswordVisibility() {
+            const passwordInput = document.getElementById('password');
+            const showButton = event.target;
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                showButton.textContent = 'Hide';
+            } else {
+                passwordInput.type = 'password';
+                showButton.textContent = 'Show';
+            }
+        }
+
+        // You would typically handle the sign-in logic with JavaScript
+        // by adding an event listener to the "Sign In" button.
+        const signInButton = document.querySelector('.sign-in-button');
+        signInButton.addEventListener('click', () => {
+            // Add your authentication logic here
+            alert('Sign In button clicked!');
+        });
+
+        // You would also add functionality to the language switcher
+        const languageSwitcher = document.querySelector('.language-switcher');
+        languageSwitcher.addEventListener('click', (event) => {
+            if (event.target.tagName === 'SPAN') {
+                const selectedLanguage = event.target.textContent;
+                alert(`Language switched to: ${selectedLanguage}`);
+                // Implement your language switching logic here
+            }
+        });
+
+        // Note: Replace 'logo.png' with the actual path to your logo image.
+    </script>
+</body>
+</html>
